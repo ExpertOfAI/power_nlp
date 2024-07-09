@@ -2,6 +2,10 @@ from collections import defaultdict
 from nltk.util import ngrams
 from nltk.corpus import wordnet
 import re
+
+def g_cbow(word, loaders):
+	return loaders.cbow[word] if word in loaders.cbow else set()
+	
 def tfidf(id_terms, cat_product_count_filtered):	
 	term_max_freq = defaultdict(int)
 	for terms_count in id_terms.values():
@@ -41,7 +45,7 @@ def similarity_knn(combs, loaders):
 	ordered = {}
 	if len(combs[0])>1:
 		for combination in combs:			
-			lst = [get_cbow(c) for c in combination]
+			lst = [g_cbow(c,loaders) for c in combination]
 			lst.sort(key = len, reverse=True)
 			smallest_set = lst.pop()
 			combinations_matched_temp = len(smallest_set.intersection(*lst))
@@ -57,7 +61,7 @@ def similarity_knn(combs, loaders):
 				ordered = {comb:round(50*score/ordered_max,2) for comb,score in ordered.items()}		
 				matched = {comb:score+ordered[comb] for comb,score in matched.items()}
 	else:
-		matched = {tuple(combination):len(get_cbow(combination[0])) for combination in combs}
+		matched = {tuple(combination):len(g_cbow(combination[0],loaders)) for combination in combs}
 	if matched:
 		most_frequent = max(matched, key= lambda x: matched[x])
 		return list(most_frequent)	   
