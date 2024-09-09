@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
-setup(name='power_nlp_1.3',
-		version='1.3',
-		description='power nlp1',
+setup(name='power_nlp_cpu',
+		version='1.0',
+		description='power nlp_cpu',
 		url='https://github.com/ExpertOfAI/power_nlp',
 		author='ExpertOfAI1',
 		license='MIT',
