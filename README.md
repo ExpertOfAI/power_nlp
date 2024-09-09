@@ -2,11 +2,11 @@ https://packaging.python.org/en/latest/tutorials/packaging-projects/
 
 from setuptools import setup, find_packages
 
-setup(name='power_nlp',
-		version='1.1',
-		description='power_nlp',
+setup(name='power_nlp_1.3',
+		version='1.3',
+		description='power_nlp_1.3',
 		url='https://github.com/ExpertOfAI/power_nlp',
-		author='ExpertOfAI',
+		author='ExpertOfAI1',
 		license='MIT',
 		packages=find_packages(),
 		classifiers=[
