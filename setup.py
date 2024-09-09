@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='power_nlp',
-		version='1.0',
+		version='1.1',
 		description='power nlp',
 		url='https://github.com/ExpertOfAI/power_nlp',
 		author='ExpertOfAI',

@@ -3,7 +3,7 @@ https://packaging.python.org/en/latest/tutorials/packaging-projects/
 from setuptools import setup, find_packages
 
 setup(name='power_nlp',
-		version='1.0',
+		version='1.1',
 		description='power_nlp',
 		url='https://github.com/ExpertOfAI/power_nlp',
 		author='ExpertOfAI',
